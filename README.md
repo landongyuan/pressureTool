@@ -23,7 +23,7 @@ python get-pip.py
 # 安装 Chrome浏览器
 dpkg -i google-chrome-stable_73.0.3683.103-1_amd64.deb
 # 安装失败 补齐依赖
-sudo apt-get install -f
+sudo apt-get install -f -y
 #再次安装chrome
 dpkg -i google-chrome-stable_73.0.3683.103-1_amd64.deb
 #安装chromedriver
@@ -46,7 +46,7 @@ pip install threadpool
 #启动程序
 ln -s /opt/pages/chromedriver /bin/chromedriver
 export PYTHONPATH=$PYTHONPATH:/opt/pages/dgAutoWeb/src
-nohup python /opt/pages/dgAutoWeb/src/dgAutoWeb.py &
+nohup python /opt/pages/dgAutoWeb/dgAutoWeb.py &
 docker run -t -i -v /opt/pages/dgAutoWeb/mork:/usr/share/nginx/html:ro -p 40001:80 -d --name Meet40001 nginx
 ```
 
