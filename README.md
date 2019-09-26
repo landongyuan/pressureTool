@@ -37,7 +37,7 @@ docker pull nginx
 # 安装虚拟图像化工具
 sudo apt-get install xvfb -y
 # 安装程序依赖
-mkdir -r /opt/pages
+mkdir -p /opt/pages
 pip install flask
 pip install selenium
 pip install EasyProcess
@@ -48,6 +48,8 @@ ln -s /opt/pages/chromedriver /bin/chromedriver
 export PYTHONPATH=$PYTHONPATH:/opt/pages/dgAutoWeb/src
 nohup python /opt/pages/dgAutoWeb/dgAutoWeb.py &
 docker run -t -i -v /opt/pages/dgAutoWeb/mork:/usr/share/nginx/html:ro -p 40001:80 -d --name Meet40001 nginx
+#防火墙启动窗口
+sudo ufw allow prot
 ```
 
 
